@@ -36,6 +36,11 @@ class Model {
         }
         return $objects;
     }
+    public static function getOne($columns = ["*"], $filters = []) {
+        $class = get_called_class();
+        $result = static::getResultSetFromSelect($columns, $filters);
+        return $result ? new $class($result->fetch_assoc()) : null;
+    }
 
     public static function getResultSetFromSelect($columns = ["*"], $filters = []) {
         $columnsStr = implode(", ", $columns);
