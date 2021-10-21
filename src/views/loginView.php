@@ -18,19 +18,29 @@
                 <span class="font-weight-light">Clock In </span>
                 <span class="font-weight-bold mx-1">N'</span>
                 <span class="font-weight-light">Out</span>
-                <i class="icofont-runner-alt-1 ml-2"></i>
+                <i class="icofont-runner-alt-1 ml-2"></i>   
             </div>
             <div class="card-body">
+                <?php include(TEMPLATE_PATH . '/messages.php') ?>
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" 
-                        value="<?= $email ?>"
-                        class="form-control" placeholder="E-mail" autofocus>
+                        value="<?= isset($email) ? $email : '' ?>"
+                        <?php echo (isset($email) && strlen($email) > 0) ? $email : '' ?>
+                        class="form-control <?php echo $errors && $errors["email"] ? "is-invalid" : "" ?>" placeholder="E-mail" autofocus 
+                    />
+                    <div class="invalid-feedback">
+                        <?php echo ($errors && $errors["email"]) ? $errors["email"] : ''; ?>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" 
-                        class="form-control" placeholder="Password">
+                    <input type="password" id="password" name="password"
+                        class="form-control <?php echo $errors && $errors["password"] ? "is-invalid" : "" ?>" placeholder="Password"
+                    />
+                    <div class="invalid-feedback">
+                    <?php echo ($errors && $errors["password"]) ? $errors["password"] : ''; ?>
+                    </div>
                 </div>
             </div>
             <div class="card-footer">

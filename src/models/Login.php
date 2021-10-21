@@ -3,14 +3,35 @@ loadModel("User");
 
 class Login extends Model {
 
+    public function validate() {
+        $errors = [];
+
+        if (!$this->email) {
+            $errors["email"] = "E-mail is required";
+        }
+
+        if (!$this->password) {
+            $errors["password"] = "Password is required";
+        }
+
+        if (count($errors) > 0) {
+            throw new ValidationException($errors);
+        }
+    }
+
     public function checkLogin() {
-        $user = User::getOne(["email", "password"], [["=", ["email" => "admin@cod3r.com.br"]]]);
+        $this->validate();
+        $user = User::getOne(["email", "password", "end_date"], [["=", ["email" => $this->email]]]);
         if ($user) {
+            if (strlen($user->end_date) > 0) {
+                throw new AppException("User is not active");
+            }
+
             if (password_verify($this->password, $user->password)) {
                 return $user;
             }
         }
-        throw new Exception();
+        throw new AppException("Invalid User/Password");
     }
 }
 
