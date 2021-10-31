@@ -1,6 +1,0 @@
-<?php 
-loadTemplateView("dayRecords"); 
-
- 
- 
-?>

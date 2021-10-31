@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/comum.css">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/icoFont.min.css">
+    <link rel="stylesheet" href="assets/css/icofont.min.css">
     <title>Clock In 'n Out</title>
 </head>
 <body>
@@ -24,6 +24,7 @@
                 <?php include(TEMPLATE_PATH . '/messages.php') ?>
                 <div class="form-group">
                     <label for="email">E-mail</label>
+                    <label for="email">admin@cod3r.com.br</label>
                     <input type="email" id="email" name="email" 
                         value="<?= isset($email) ? $email : '' ?>"
                         <?php echo (isset($email) && strlen($email) > 0) ? $email : '' ?>
