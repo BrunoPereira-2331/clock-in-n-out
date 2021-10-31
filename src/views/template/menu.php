@@ -22,7 +22,7 @@
             <li class="nav-item">
                 <a href=".php">
                     <i class="icofont-users mr-2"></i>
-                    Usu&aacute;rios
+                    Users
                 </a>
             </li>
         </ul>
