@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/template.css">
     <title>Clock In 'n Out</title>
 </head>
-<body>
+<body class="">
     <header class="header">
         <div class="logo">
             <i class="icofont-travelling mr-2"></i>
