@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/icofont.min.css">
     <link rel="stylesheet" href="assets/css/template.css">
+    <script>
+        let tag = document.createElement("script");
+        tag.type = "text/javascript";
+        tag.src = "assets/js/app.js";
+        document.head.appendChild(tag);
+    </script>
     <title>Clock In 'n Out</title>
 </head>
 <body class="">
