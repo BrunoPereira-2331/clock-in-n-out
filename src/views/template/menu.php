@@ -4,7 +4,7 @@
             <li class="nav-item">
                 <a href="day_records.php">
                     <i class="icofont-ui-check mr-2"></i>
-                    Registrate Point
+                    Clock Register
                 </a>
             </li>
             <li class="nav-item">
