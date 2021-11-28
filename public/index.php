@@ -7,7 +7,7 @@ $parsedUri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 $uri = urldecode($parsedUri);
 
 if ($uri === "/" || $uri === "" || $uri === "/index.php") {
-    $uri = "/loginController.php";
+    $uri = "/dayRecordsController.php";
 }
 
 require_once(CONTROLLER_PATH . "/{$uri}");

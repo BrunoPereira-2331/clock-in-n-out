@@ -23,8 +23,8 @@
             <div class="card-body">
                 <?php include(TEMPLATE_PATH . '/messages.php') ?>
                 <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <label for="email">admin@cod3r.com.br</label>
+                    <label for="">E-mail</label>
+                    <label for="">admin@cod3r.com.br</label>
                     <input type="email" id="email" name="email" 
                         value="<?= isset($email) ? $email : '' ?>"
                         <?php echo (isset($email) && strlen($email) > 0) ? $email : '' ?>

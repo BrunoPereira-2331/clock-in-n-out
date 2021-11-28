@@ -12,12 +12,12 @@
         </div>
         <div class="card-body">
             <div class="d-flex m-5 justify-content-around">
-                <span>Clock In 1: ---</span>
-                <span>Clock Out 1: ---</span>
+                <span class="record">Clock In 1: ---</span>
+                <span class="record">Clock Out 1: ---</span>
             </div>
             <div class="d-flex m-5 justify-content-around">
-                <span>Clock In 2: ---</span>
-                <span>Clock Out 2: ---</span>
+                <span class="record">Clock In 2: ---</span>
+                <span class="record">Clock Out 2: ---</span>
             </div>
         </div>
         <div class="card-footer d-flex justify-content-center">
