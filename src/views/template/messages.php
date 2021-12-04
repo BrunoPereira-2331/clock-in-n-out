@@ -1,7 +1,7 @@
 <?php 
 $errors = [];
 
-if (isset($exception)) {
+if ($exception && isset($exception)) {
     $message = [
         "type" => "error",
         "message" => $exception->getMessage()
@@ -22,6 +22,5 @@ if(isset($message) && count($message) > 0) {
 ?>
     <div class="my-3 alert alert-<?= $classType ?>" role="alert">
         <?php echo(isset($message)) ? $message["message"] : ""; ?>
-
     </div>
 <?php } ?>
