@@ -1,10 +1,7 @@
 <main class="content">
-    <div class="content-title mb-4">
-        <i class="icon icofont-check-alt mr-2"></i>
-        <div>
-            <h1>Clock Register</h1>
-        </div>
-    </div>
+    <?php 
+        renderTitle("Clock Register", "icofont-check-alt");
+    ?>
     <div class="card">
         <div class="card-header">
             <h3>10 Jan 2025</h3>

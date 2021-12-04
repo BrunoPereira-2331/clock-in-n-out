@@ -14,6 +14,7 @@ function loadView($viewName, $params = [], $exception = []) {
     }
     require_once(VIEW_PATH . "/{$viewName}.php");
 }
+
 function loadTemplateView($viewName, $params = [], $exception = []) {
     if (count($params) > 0) {
         foreach ($params as $key => $value) {
@@ -26,6 +27,10 @@ function loadTemplateView($viewName, $params = [], $exception = []) {
     require_once(TEMPLATE_PATH . "/menu.php");
     require_once(VIEW_PATH . "/{$viewName}.php");
     require_once(TEMPLATE_PATH . "/footer.php");
+}
+
+function renderTitle($title, $icon = null) {
+    require_once(TEMPLATE_PATH . "/title.php");
 }
 
 ?>
