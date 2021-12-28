@@ -54,6 +54,17 @@ class Model {
         }
     }
 
+    public function save() {
+        $insertColumnsNames = implode(",", static::$columns);
+        $sql = "INSERT INTO " . static::$tableName . " ($insertColumnsNames) VALUES (";
+        foreach(static::$columns as $col) {
+            $sql .= static::getFormatedValue($this->$col) . ",";
+        }
+        $sql[strlen($sql) - 1] = ")";
+        $id = Database::executeSql($sql);
+        $this->id = $id;
+    }
+
     public static function getFormatedWhere($dataWhere = [["=", []]]) {
         $filters = [];
         if (count($dataWhere) > 0) {
