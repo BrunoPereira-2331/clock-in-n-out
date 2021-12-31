@@ -18,7 +18,11 @@ function loadView($viewName, $params = [], $exception = []) {
 function loadTemplateView($viewName, $params = [], $exception = []) {
     if (count($params) > 0) {
         foreach ($params as $key => $value) {
-            if (strlen($value) > 0) {
+            if (gettype($value) == "string") {
+                if (strlen($value) > 0) {
+                    ${$key} = $value;
+                }
+            } else if (gettype($value) == "object" || gettype($value) == "array") {
                 ${$key} = $value;
             }
         }

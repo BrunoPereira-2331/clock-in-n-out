@@ -30,7 +30,7 @@ class Database {
             throw new Exception(mysqli_error($conn));
         }
         $id = $conn->insert_id;
-        $conn->close;
+        $conn->close();
         return $id;
     }
 }

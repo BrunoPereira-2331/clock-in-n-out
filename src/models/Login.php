@@ -20,7 +20,7 @@ class Login extends Model {
 
     public function checkLogin() {
         $this->validate();
-        $user = User::getOne(["name", "email", "password", "end_date"], [["=", ["email" => $this->email]]]);
+        $user = User::getOne(["id", "name", "email", "password", "end_date"], [["=", ["email" => $this->email]]]);
         if ($user) {
             if (strlen($user->end_date) > 0) {
                 throw new AppException("User is not active");

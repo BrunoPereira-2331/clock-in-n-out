@@ -11,20 +11,15 @@ function isWeekend($date) {
 
 
 function dateCmp($firstDate, $secondDate) {
-    $comparison = 0;
     $firstDateTime = getDateAsDateTime($firstDate);
     $secondDateTime = getDateAsDateTime($secondDate);
-    switch ($comparison) {
-        case $firstDateTime > $secondDateTime:
-            return 1;
-            break;
-        case $firstDateTime = $secondDateTime:
-            return 0;
-            break;
-        case $firstDateTime < $secondDateTime:
-            return -1;
-            break;
+    if ($firstDateTime > $secondDateTime) {
+        return 1;
+    } else if ($firstDateTime == $secondDateTime) {
+        return 0;
     }
+    $firstDateTime < $secondDateTime;
+    return -1;
 }
 
 function getNextDay($date) {

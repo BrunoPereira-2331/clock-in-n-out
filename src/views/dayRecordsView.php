@@ -10,12 +10,12 @@
         </div>
         <div class="card-body">
             <div class="d-flex m-5 justify-content-around">
-                <span class="record">Clock In 1: ---</span>
-                <span class="record">Clock Out 1: ---</span>
+                <span class="record">Clock In 1: <?php echo $records->time1 ?? '---'; ?></span>
+                <span class="record">Clock Out 1: <?php echo $records->time2 ?? '---'; ?></span>
             </div>
             <div class="d-flex m-5 justify-content-around">
-                <span class="record">Clock In 2: ---</span>
-                <span class="record">Clock Out 2: ---</span>
+                <span class="record">Clock In 2: <?php echo $records->time3 ?? '---'; ?></span>
+                <span class="record">Clock Out 2: <?php echo $records->time4 ?? '---'; ?></span>
             </div>
         </div>
         <div class="card-footer d-flex justify-content-center">

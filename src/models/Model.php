@@ -54,7 +54,7 @@ class Model {
         }
     }
 
-    public function save() {
+    public function insert() {
         $insertColumnsNames = implode(",", static::$columns);
         $sql = "INSERT INTO " . static::$tableName . " ($insertColumnsNames) VALUES (";
         foreach(static::$columns as $col) {
@@ -63,6 +63,16 @@ class Model {
         $sql[strlen($sql) - 1] = ")";
         $id = Database::executeSql($sql);
         $this->id = $id;
+    }
+
+    public function update() {
+        $sql = "UPDATE " . static::$tableName . " SET ";
+        foreach(static::$columns as $col) {
+            $sql .= static::getFormatedValue($this->$col) . ",";
+        }
+        $sql[strlen($sql) - 1] = " ";
+        $sql .= "WHERE id {$this->id}";
+        Database::executeSql($sql);
     }
 
     public static function getFormatedWhere($dataWhere = [["=", []]]) {
