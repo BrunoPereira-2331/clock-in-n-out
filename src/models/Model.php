@@ -67,11 +67,12 @@ class Model {
 
     public function update() {
         $sql = "UPDATE " . static::$tableName . " SET ";
+        // this is ugly - every call to this method make a update for all the columns .-.
         foreach(static::$columns as $col) {
-            $sql .= static::getFormatedValue($this->$col) . ",";
+            $sql .= "$col = " . static::getFormatedValue($this->$col) . ",";
         }
         $sql[strlen($sql) - 1] = " ";
-        $sql .= "WHERE id {$this->id}";
+        $sql .= "WHERE id = {$this->id}";
         Database::executeSql($sql);
     }
 

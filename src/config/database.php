@@ -25,9 +25,11 @@ class Database {
     }
 
     public static function executeSql($sql) {
+        echo 'sql <br>';
+        print_r($sql);
         $conn = self::getConnection();
         if (!mysqli_query($conn, $sql)) {
-            throw new Exception(mysqli_error($conn));
+            throw new Exception(mysqli_error($conn) . " START SQL: ($sql) END SQL");
         }
         $id = $conn->insert_id;
         $conn->close();
